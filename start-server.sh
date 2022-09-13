@@ -1,7 +1,6 @@
 #!/bin/bash
 
-cd /app
-box install
+# install all dependencies
 
 cd /app/modules/contentbox
 box install
@@ -13,6 +12,7 @@ cd /app/modules/cors
 box install
 
 cd /app
+box install
 
 box server start \
     trayEnable=false \
@@ -26,4 +26,6 @@ box server start \
     startScript=bash \
     verbose=true
 
+# TODO: why is container exiting?
+# this keeps it alive so we can exec in
 ping localhost
